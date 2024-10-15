@@ -1,0 +1,20 @@
+#GENERALS
+[shell]
+program = "/bin/fish"
+
+#WINDOW
+[window]
+decorations = "None"
+opacity = 0.7
+title = "uwu-term"
+dynamic_title = true 
+
+#SCROLLING
+[scrolling]
+history = 10000
+
+#FONTS
+[font]
+normal = { family = "Hack", style = "Regular" }
+size = 8.25
+
