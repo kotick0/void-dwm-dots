@@ -67,6 +67,9 @@ static const char *pavucntrl[] = {"pavucontrol", "--tab=3", NULL};
 static const char *volUp[] =     { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
 static const char *volDown[] =   { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
 static const char *volMute[] =   { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
+/*Backlight control*/
+static const char *lightUp[]   = { "light", "-A", "5", NULL };
+static const char *lightDown[] = { "light", "-U", "5", NULL };
 /* Dmenu shit */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
@@ -114,6 +117,10 @@ static const Key keys[] = {
 	{ 0,                       0x1008FF11, spawn, {.v = volDown } },
 	{ 0,                       0x1008FF12, spawn, {.v = volMute } },
 	{ 0,                       0x1008FF13, spawn, {.v = volUp  } },
+/*Backlight control binds*/
+	{ 0,			   XK_F9, spawn, {.v = lightUp } },
+	{ 0,			   XK_F8, spawn, {.v = lightDown } },
+	
 
 };
 
