@@ -1,0 +1,74 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+"logo": {
+    "type": "file",
+    "source": "/home/kotik2137/.config/fastfetch/fox.txt",
+    "color": {
+	"1": "light_white"
+  }
+},
+
+    "modules": [
+        {
+            "type": "title",
+            "key": "Me",
+	    "keyColor": "underline_light_cyan",
+            "format": "{user-name}"
+        },
+        {
+            "type": "title",
+            "key": "Machina",
+	    "keyColor": "light_cyan",
+            "format": "{host-name}"
+        },
+        {
+            "type": "host",
+            "key": "ID",
+	    "format": "{family}",
+	    "keyColor": "light_red"
+        },
+        {
+            "type": "os",
+	    "key": "OS",
+	    "keyColor": "red",
+            "format": "{pretty-name}"
+        },
+	{
+       	    "type": "kernel",
+	    "key": "GNU/Linux",
+	    "format": "{release}",
+	    "keyColor": "italic_light_magenta"
+	},
+        {
+            "type": "wm",
+            "key": "WM",
+	    "keyColor": "light_magenta",
+	    "format": "[{process-name}]"
+        },
+        {
+            "type": "cpu",
+            "key": "CPU",
+	    "keyColor": "light_blue",
+            "format": "{vendor} [{cores-logical}]"
+        },
+        {
+            "type": "memory",
+            "key": "RAM",
+	    "keyColor": "blue",
+	    "format": "{total} {percentage}"
+        },
+        {
+            "type": "disk",
+            "key": "/",
+	    "format": "{size-total} {size-percentage}",
+            "folders": "/"
+        },
+	{
+            "type": "disk",
+            "key": "/home",
+	    "format": "{size-total} [{filesystem}]",
+            "folders": "/home"
+        }
+    ]
+}

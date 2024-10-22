@@ -13,14 +13,15 @@ static const char col_gray2[]       = "#8D868B";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#AD7DB5";
+static const char col_brpink[]	    = "#f7b4ff";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_brpink },
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "λ", "II", "III", "IV", "V" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -41,8 +42,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "|0.0|",      tile },    /* first entry is default */
+	{ "|><|",       NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -61,7 +62,7 @@ static const Layout layouts[] = {
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *rofidruncmd[] = {"rofi", "-show", "drun", NULL};
 static const char *browser[] = {"flatpak", "run", "io.gitlab.librewolf-community", NULL};
-
+static const char *volume[] = {"pavucontrol", "--tab=3", NULL};
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 
@@ -72,6 +73,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = rofidruncmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
         { MODKEY,                       XK_w,      spawn,      	   {.v = browser } },
+	{ MODKEY,			XK_s,	   spawn,	   {.v = volume  } },
       /*{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },*/
       /*{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },*/
       /*{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },*/
@@ -101,7 +103,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 };
 
 /* button definitions */
