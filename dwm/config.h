@@ -58,11 +58,16 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
-static const char *termcmd[]  = { "alacritty", NULL };
+/* commands - misc. */
+static const char *termcmd[]  =    { "alacritty", NULL };
 static const char *rofidruncmd[] = {"rofi", "-show", "drun", NULL};
-static const char *browser[] = {"flatpak", "run", "io.gitlab.librewolf-community", NULL};
-static const char *volume[] = {"pavucontrol", "--tab=3", NULL};
+static const char *browser[] =     {"flatpak", "run", "io.gitlab.librewolf-community", NULL};
+/* Volume control */
+static const char *pavucntrl[] = {"pavucontrol", "--tab=3", NULL};
+static const char *volUp[] =     { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%+", NULL };
+static const char *volDown[] =   { "wpctl", "set-volume", "-l", "1.5", "@DEFAULT_AUDIO_SINK@", "5%-", NULL };
+static const char *volMute[] =   { "wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL };
+/* Dmenu shit */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 
@@ -73,7 +78,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      spawn,          {.v = rofidruncmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
         { MODKEY,                       XK_w,      spawn,      	   {.v = browser } },
-	{ MODKEY,			XK_s,	   spawn,	   {.v = volume  } },
+	{ MODKEY,			XK_s,	   spawn,	   {.v = pavucntrl } },
       /*{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },*/
       /*{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },*/
       /*{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },*/
@@ -104,6 +109,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
+/* Volume control binds */
+
+	{ 0,                       0x1008FF11, spawn, {.v = volDown } },
+	{ 0,                       0x1008FF12, spawn, {.v = volMute } },
+	{ 0,                       0x1008FF13, spawn, {.v = volUp  } },
+
 };
 
 /* button definitions */
@@ -122,4 +133,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
