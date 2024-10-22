@@ -1,1 +1,1 @@
-##Repo for my void-dwm .dots and some miscellaneous.
+## Repo for my void-dwm .dots and some miscellaneous.
