@@ -14,7 +14,7 @@ end
 #ALIASES SECTION
 #---------------
 #Dwm-suckless aliases:
-alias dwm-conf='cd ~/suckless/dwm && sudo nvim config.h && cd -' # --description 'Change DWM config'
+alias dwm-conf='cd ~/suckless/dwm && nvim config.h && cd -' # --description 'Change DWM config'
 alias dwm-backup='cp ~/suckless/dwm/config.h ~/suckless/dwm/config.def.h && cp ~/suckless/dwm/config.def.h ~/suckless/dwm/backup' # --description 'Backup DWM'
 alias dwm-upd='cd ~/suckless/dwm && sudo make clean install && cd -' # --description 'Update DWM'
 
