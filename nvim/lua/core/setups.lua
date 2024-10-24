@@ -12,7 +12,7 @@ require("alpha.themes.dashboard").section.footer.val = require("alpha.fortune")(
 -- Lualine status bar
 require("lualine").setup({
     options = {
-        theme = "everforest",
+        theme = "horizon",
         component_separators = " ",
         section_separators = { left = "", right = "" },
     },

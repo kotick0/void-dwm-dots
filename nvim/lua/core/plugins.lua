@@ -53,7 +53,7 @@ return {
     "MattesGroeger/vim-bookmarks",         -- Bookmarks
     "lewis6991/gitsigns.nvim",             -- Git signs
     "hiphish/rainbow-delimiters.nvim",     -- Brackets, parenthesis colorizing
-
+    "prettier/vim-prettier",               -- Prettier code Formatter
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
