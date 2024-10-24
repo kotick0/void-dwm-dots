@@ -22,3 +22,4 @@ alias dwm-upd='cd ~/suckless/dwm && sudo make clean install && cd -' # --descrip
 alias orphans='sudo xbps-remove -Oo'
 alias reconf='sudo xbps-reconfigure -fa'
 alias update='sudo xbps-install -Syu'
+alias shutdown='sudo shutdown -h now'

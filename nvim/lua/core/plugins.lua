@@ -1,7 +1,12 @@
 -- PLUGINS
 
 return {
-    -------- Appearance
+    -- Appearance
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000
+    },
 
     "goolord/alpha-nvim",        -- Startup screen
     "nvim-lualine/lualine.nvim", -- Status line

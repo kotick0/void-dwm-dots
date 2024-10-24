@@ -1,5 +1,5 @@
 -- SETTINGS
-
+opt.background = "dark"
 -- Set termguicolors to enable highlight groups
 opt.termguicolors = true
 
